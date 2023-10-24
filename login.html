@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <h1>CAMY'S STOP</h1>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #fd5cc7;
+        background-position: center; /* Centraliza a imagem na tela */
+        background-repeat: no-repeat; /* Evita repetição da imagem */
+    }
+
+
+    /* O restante do seu estilo CSS continua aqui */
+
+
+        .login-container {
+            display:cwnter;
+            margin: 100px auto;
+            width: 300px;
+            padding: 20px;
+            background-color: #ff00aa;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #000000;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            background-color: #000000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Tela de Login</h2>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Nome de Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+    
+            // Obter os valores do nome de usuário e senha
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+    
+            // Verificar se o nome de usuário e a senha correspondem
+            if (username === "Camylle" && password === "mylle150706") {
+                // Redirecionar para a página do jogo STOP após o login bem-sucedido
+                window.location.href = "letras.html"; // Substitua pelo caminho correto para a página do jogo STOP
+            } else {
+                alert("Nome de usuário ou senha incorretos. Tente novamente.");
+            }
+        });
+    </script>
+</body>
+</html>

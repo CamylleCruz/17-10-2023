@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('backletras.png'); /* Substitua 'sua_imagem.jpg' pelo caminho para a sua imagem */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ff00aa;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(245, 237, 237, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .letter-panel {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .letter-button {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 0 10px;
+        }
+
+        .chosen-letter {
+            font-size: 24px;
+            margin-top: 10px;
+            background-color: #ffffff; /* Cor do quadrado de fundo */
+            padding: 5px 10px; /* Espaçamento interno do quadrado */
+            border-radius: 5px;
+        }
+
+        button#start-button {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> CAMY'S STOP</h1>
+        <button class="letter-button" id="letter-button">Clique aqui para esolher uma letra</button>
+        <div class="letter-panel">
+            <span class="chosen-letter" id="chosen-letter"></span>
+        </div>
+        <button id="start-button">PLAY</button>
+    </div>
+
+    <script>
+        document.getElementById("start-button").addEventListener("click", function() {
+    // Redirecionar para a página do jogo STOP após clicar em "Iniciar Jogo"
+    window.location.href = "colunas.html"; // Substitua pelo link correto
+});
+
+        const letterButton = document.getElementById("letter-button");
+        const chosenLetter = document.getElementById("chosen-letter");
+
+        letterButton.addEventListener("click", function() {
+            // Letras do alfabeto
+            const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+            // Gere um índice aleatório
+            const randomIndex = Math.floor(Math.random() * alphabet.length);
+
+            // Obtenha a letra aleatória
+            const randomLetter = alphabet[randomIndex];
+
+            // Atualize o texto do painel com a letra escolhida
+            chosenLetter.textContent = randomLetter;
+         });
+
+
+        
+    </script>
+</body>
+</html>
